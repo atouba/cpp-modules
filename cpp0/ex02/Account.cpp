@@ -73,6 +73,7 @@ bool	Account::makeWithdrawal(int withdrawal) {
 		_amount -= withdrawal;
 		_totalNbWithdrawals++;
 		_nbWithdrawals++;
+		_totalAmount -= withdrawal;
 		return true;
 	}
 }
