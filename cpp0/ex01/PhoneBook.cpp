@@ -24,15 +24,13 @@ void	display_string(std::string str) {
 		std::cout << ".";
 	}
 	else {
-		for (int i = 0; i < 10 - str.length(); i++)
-			std::cout << " ";
-		std::cout << str;
+		std::cout << std::setw(10) << str;
 	}
 	std::cout << "|";
 }
 
 void	display_contact(Contact contact, int i) {
-	std::cout << "|         " << i << "|";
+	std::cout << "|" << std::setw(10) << i << "|";
 	display_string(contact._first_name);
 	display_string(contact._last_name);
 	display_string(contact._nickname);
