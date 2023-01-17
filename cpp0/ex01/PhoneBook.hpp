@@ -6,9 +6,7 @@
 #ifndef CPP_MODULES_PHONEBOOK_HPP
 #define CPP_MODULES_PHONEBOOK_HPP
 
-//#include "main.hpp"
 #include "Contact.hpp"
-//#include "PhoneBook.hpp"
 
 class	PhoneBook {
 private:

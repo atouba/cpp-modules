@@ -7,11 +7,7 @@
 
 void	PhoneBook::add() {
 	i %= 8;
-	std::cin >> contacts[i]._first_name;
-	std::cin >> contacts[i]._last_name;
-	std::cin >> contacts[i]._nickname;
-	std::cin >> contacts[i]._phone_number;
-	std::cin >> contacts[i]._darkest_secret;
+	contacts[i].input_attributes();
 	i++;
 	if (n_contacts != 8)
 		n_contacts = i;
@@ -31,9 +27,9 @@ void	display_string(std::string str) {
 
 void	display_contact(Contact contact, int i) {
 	std::cout << "|" << std::setw(10) << i << "|";
-	display_string(contact._first_name);
-	display_string(contact._last_name);
-	display_string(contact._nickname);
+	display_string(contact.get_first_name());
+	display_string(contact.get_last_name());
+	display_string(contact.get_nickname());
 	std::cout << std::endl;
 }
 
@@ -51,15 +47,15 @@ void	PhoneBook::search() {
 	}
 	std::cout << "|__________|__________|__________|__________|" << std::endl;
 	std::cin >> entry;
-	if (std::cin.fail() || entry > 8 || entry < 0) {
+	if (std::cin.fail() || entry >= n_contacts || entry < 0) {
 		std::cout << "Index out of range or wrong" << std::endl;
 		std::cin.clear();
 	}
 	else {
-		std::cout << "first name: " << contacts[entry]._first_name << std::endl;
-		std::cout << "last name: " << contacts[entry]._last_name << std::endl;
-		std::cout << "nickname: " << contacts[entry]._nickname << std::endl;
-		std::cout << "phone number: " << contacts[entry]._phone_number << std::endl;
-		std::cout << "darkest secret: " << contacts[entry]._darkest_secret << std::endl;
+		std::cout << "first name: " << contacts[entry].get_first_name() << std::endl;
+		std::cout << "last name: " << contacts[entry].get_last_name() << std::endl;
+		std::cout << "nickname: " << contacts[entry].get_nickname() << std::endl;
+		std::cout << "phone number: " << contacts[entry].get_phone_number() << std::endl;
+		std::cout << "darkest secret: " << contacts[entry].get_darkest_secret() << std::endl;
 	}
 }
