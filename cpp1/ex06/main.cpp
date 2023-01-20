@@ -7,11 +7,12 @@
 
 int main(int ac, char **av) {
 	Harl	one;
+	int		index;
 
 	if (ac != 2)
 		return 1;
-	int index = av[1][4] % 4;
 
+	index = av[1][4] % 4;
 	switch (index) {
 		case 3:
 			one.complain("DEBUG");
@@ -22,7 +23,7 @@ int main(int ac, char **av) {
 		case 1:
 			one.complain("WARNING");
 			index++;
-		case 2:
+		default:
 			one.complain("ERROR");
 	}
 }
