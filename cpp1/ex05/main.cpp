@@ -12,9 +12,8 @@ int main() {
 	std::string c = "WARNING";
 	std::string d = "ERROR";
 
+	one.complain("ERROR");
+	one.complain("WARNING");
 	one.complain("DEBUG");
-//	std::cout << a[4] % 4 << std::endl;
-//	std::cout << b[4] % 4 << std::endl;
-//	std::cout << c[4] % 4 << std::endl;
-//	std::cout << d[4] % 4 << std::endl;
+	one.complain("INFO");
 }
