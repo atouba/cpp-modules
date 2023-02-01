@@ -19,13 +19,13 @@ Point&	Point::operator=(const Point &p) {
 
 Point::~Point() {}
 
-//Fixed&	Point::get_x() const {
-//	return _x;
-//}
-//
-//Fixed&	Point::get_y() const {
-//	return _y;
-//}
+float	Point::get_x() const {
+	return _x.toFloat();
+}
+
+float	Point::get_y() const {
+	return _y.toFloat();
+}
 
 Point::Point(const float x, const float y) : _x(x), _y(y) {}
 

@@ -19,12 +19,12 @@ public:
 	Point&	operator=(const Point& p);
 	~Point();
 
-//	Fixed&	get_x() const;
-//	Fixed&	get_y() const;
+	float	get_x() const;
+	float	get_y() const;
 
 	Point(const float x, const float y);
 };
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool bsp(const Point & a, const Point & b, const Point & c, const Point & point);
 
 #endif //C____POINT_HPP

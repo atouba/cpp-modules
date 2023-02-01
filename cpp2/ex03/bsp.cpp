@@ -5,22 +5,22 @@
 
 #include "Point.hpp"
 
-const int	abs(const int n) {
+const float	abs_n(const float n) {
 	if (n > 0)
 		return n;
 	return -n;
 }
 
-float	triangle_area(Point const i, Point const j, Point k) {
-	const int	ij_x = abs(i.get_x() - j.get_x());
-	const int	ij_y = abs(i.get_y() - j.get_y());
-	const int	ik_x = abs(i.get_x() - k.get_x());
-	const int	ik_y = abs(i.get_y() - k.get_y());
+float	triangle_area(const Point & i, const Point & j, const Point& k) {
+	const float	ij_x = abs_n((float)i.get_x() - (float)j.get_x());
+	const float	ij_y = abs_n(i.get_y() - j.get_y());
+	const float	ik_x = abs_n(i.get_x() - k.get_x());
+	const float	ik_y = abs_n(i.get_y() - k.get_y());
 
-	return (float)(ij_x * ik_y - ij_y * ik_x) / 2;
+	return abs_n((float)(ij_x * ik_y - ij_y * ik_x));
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const point) {
+bool bsp(const Point & a, const Point & b, const Point & c, const Point & point) {
 	float	area, area1, area2, area3;
 
 	area = triangle_area(a, b, c);
@@ -28,5 +28,7 @@ bool bsp( Point const a, Point const b, Point const c, Point const point) {
 	area2 = triangle_area(a, c, point);
 	area3 = triangle_area(b, c, point);
 
+	if (area1 == 0 || area2 == 0 || area3 == 0)
+		return false;
 	return (area == area1 + area2 + area3);
 }
