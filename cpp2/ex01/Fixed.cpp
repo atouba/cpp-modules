@@ -6,7 +6,7 @@ Fixed::Fixed(const int integer): _integer(integer * 256) {
     std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float number): _integer(number * 256) {
+Fixed::Fixed(const float number): _integer(roundf(number * 256)) {
     std::cout << "Float constructor called" << std::endl;
 }
 
