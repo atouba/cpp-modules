@@ -19,32 +19,16 @@ ClapTrap::ClapTrap(const ClapTrap &c) {
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap &c) {
 	if (this != &c) {
-		_name = c.get_name();
-		_hit_points = c.get_hit_points();
-		_energy_points = c.get_energy_points();
-		_attack_damage = c.get_attack_damage();
+		_name = c._name;
+		_hit_points = c._hit_points;
+		_energy_points = c._energy_points;
+		_attack_damage = c._attack_damage;
 	}
 	return *this;
 }
 
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap's destructor is called" << std::endl;
-}
-
-std::string	ClapTrap::get_name() const {
-	return _name;
-}
-
-int	ClapTrap::get_hit_points() const {
-	return _hit_points;
-}
-
-int	ClapTrap::get_energy_points() const {
-	return _energy_points;
-}
-
-int	ClapTrap::get_attack_damage() const {
-	return _attack_damage;
 }
 
 void	ClapTrap::attack(const std::string &target) {
@@ -62,7 +46,7 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 		std::cout << "\t\tClapTrap can’t do anything if it has no hit points or energy points left." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap is being attacked, and it'll lose " << amount << " hit points" << std::endl;
+	std::cout << "ClapTrap " << _name << " is going through damage, and it'll lose " << amount << " hit points" << std::endl;
 	if (amount > _hit_points)
 		amount = _hit_points;
 	_hit_points -= amount;
@@ -73,7 +57,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 		std::cout << "\t\tClapTrap can’t do anything if it has no hit points or energy points left." << std::endl;
 		return ;
 	}
-	std::cout << "ClapTrap is being repaired, gaining " << amount << " hit points back" << std::endl;
+	std::cout << "ClapTrap " << _name << " is being repaired, gaining " << amount << " hit points back" << std::endl;
 	_hit_points += amount;
 	_energy_points--;
 }

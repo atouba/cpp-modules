@@ -6,11 +6,19 @@
 #include "ClapTrap.hpp"
 
 int main() {
+//	std::cout << "\033[0;32mbold red text\033[0m\n";
 	ClapTrap	a("one");
 	ClapTrap	b("two");
 
+	std::cout <<  std::endl << "/*************************************************/" << std::endl << std::endl;
+
 	a.attack("two");
-	b.attack(a.get_name());
-	a.takeDamage(500);
-	a.beRepaired(7);
+	b.takeDamage(3);
+	b.beRepaired(6);
+	b.attack("one");
+	a.takeDamage(100);
+	a.attack("two");
+
+	std::cout << std::endl << "/*************************************************/" << std::endl << std::endl;
+
 }
