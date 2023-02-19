@@ -74,8 +74,12 @@ void	Bureaucrat::decrementGrade() {
 void	Bureaucrat::signForm(Form& f) {
 	if (f.getSign())
 		std::cout << _name << " signed " << f.getName() << std::endl;
-	else
-		std::cout << _name << " couldn't sign " << f.getName() << "because of some reason" << std::endl;
+	else {
+		if (_grade > f.getGradeSign() && f.getGradeSign() <= 150 && f.getGradeSign() >= 1)
+			std::cout << _name << " couldn't sign " << f.getName() << "because " << _name << "'s grade is lower than the form's grade required to sign" << std::endl;
+		else
+			std::cout << _name << " couldn't sign " << f.getName() << " because the form's grade required to sign is not in the range [1, 150]" << std::endl;
+	}
 }
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat& b) {

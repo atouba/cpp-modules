@@ -13,7 +13,7 @@ int main() {
 	std::cout << std::endl;
 
 	Bureaucrat	a("Bob", 1);
-	Form		b("Some Form", 20, 17);
+	Form		b("Some Form", 2, 10);
 
 	std::cout << b << std::endl;
 
