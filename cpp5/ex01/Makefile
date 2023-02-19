@@ -1,0 +1,19 @@
+NAME		=		maggots
+CC			=		c++ -std=c++98
+FLAGS		=		-Wall -Wextra -Werror
+FILES		=		main.cpp GradeTooHighException.cpp GradeTooLowException.cpp  Bureaucrat.cpp Form.cpp
+
+OBJS		=		$(FILES:.cpp=.o)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -rf *.o
+
+fclean: clean
+	rm -rf $(NAME)
+
+re: fclean all
