@@ -14,6 +14,11 @@ public:
 	 const char* what() const throw();
 };
 
+class Form::GradeTooHighException : public std::exception {
+public:
+	 const char* what() const throw();
+};
+
 class Bureaucrat::GradeTooHighException : public std::exception {
 public:
 	const char* what() const throw();

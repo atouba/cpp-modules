@@ -10,6 +10,7 @@
 #define CPP5_BUREAUCRAT_HPP
 
 #include "AForm.hpp"
+#include "Form.hpp"
 
 class Bureaucrat {
 private:
@@ -32,6 +33,7 @@ public:
 	void		decrementGrade();
 
 	void	signAForm(AForm& f);
+	void	executeForm(Form const& form);
 };
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat& b);

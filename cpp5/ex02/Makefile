@@ -4,7 +4,8 @@ FLAGS		=		-Wall -Wextra -Werror
 FILES		=		main.cpp  \
 					GradeTooHighException.cpp GradeTooLowException.cpp   \
 					ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp \
-					Bureaucrat.cpp AForm.cpp
+					Bureaucrat.cpp AForm.cpp \
+					Form.cpp
 
 OBJS		=		$(FILES:.cpp=.o)
 

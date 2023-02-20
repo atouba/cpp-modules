@@ -9,6 +9,10 @@ const char* AForm::GradeTooHighException::what() const throw() {
 	return "Grade is Too High";
 }
 
+const char* Form::GradeTooHighException::what() const throw() {
+	return "Grade is Too High";
+}
+
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
 	return "Grade is Too High";
 }

@@ -82,6 +82,18 @@ void	Bureaucrat::signAForm(AForm& f) {
 	}
 }
 
+void	Bureaucrat::executeForm(Form const& form) {
+	try {
+		if (getGrade() > form.getGradeExec())
+			throw GradeTooLowException();
+	}
+	catch (std::exception& e) {
+		std::cout << "Form couldn't be executed, because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << _name << " executed " << form.getName() << std::endl;
+}
+
 std::ostream&	operator<<(std::ostream& o, Bureaucrat& b) {
 	o << b.getName() << ", bureaucrat grade " << b.getGrade() << std::endl;
 	return o;

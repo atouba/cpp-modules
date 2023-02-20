@@ -7,16 +7,15 @@
 //#include "Bureaucrat.hpp"
 //#endif
 
-#ifndef CPP5_AForm_HPP
-#define CPP5_AForm_HPP
+#ifndef CPP5_FORM_HPP
+#define CPP5_FORM_HPP
 
 
 #include <iostream>
-#include <fstream>
 
 class Bureaucrat;
 
-class AForm {
+class Form {
 private:
 	const std::string	_name;
 	const int 			_grade_sign;
@@ -27,11 +26,11 @@ public:
 	class 				GradeTooHighException;
 	class 				GradeTooLowException;
 
-	AForm();
-	AForm(const AForm& f);
-	AForm&	operator=(const AForm& f);
-	virtual ~AForm();
-	AForm(std::string name, int grade_sign, int grade_exec);
+	Form();
+	Form(const Form& f);
+	Form&	operator=(const Form& f);
+	~Form();
+	Form(std::string name, int grade_sign, int grade_exec);
 
 	std::string	getName() const;
 	int 		getGradeSign() const;
@@ -39,14 +38,8 @@ public:
 	bool		getSign() const;
 
 	void	beSigned(Bureaucrat& b);
-	void	beSignedShrubbery(Bureaucrat& b);
-	void	beSignedRobotomy(Bureaucrat& b);
-	void	beSignedPresidential(Bureaucrat& b);
-
-	virtual void	execute(Bureaucrat const& executor) const = 0;
-
 };
 
-std::ostream&	operator<<(std::ostream& o, AForm& f);
+std::ostream&	operator<<(std::ostream& o, Form& f);
 
-#endif //CPP5_AForm_HPP
+#endif //CPP5_FORM_HPP
