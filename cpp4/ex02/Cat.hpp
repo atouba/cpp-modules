@@ -6,10 +6,10 @@
 #ifndef CPP4_CAT_HPP
 #define CPP4_CAT_HPP
 
-#include "A_Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public A_Animal {
+class Cat : public AAnimal {
 private:
 	Brain*	_b;
 public:

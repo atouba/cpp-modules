@@ -1,7 +1,7 @@
-NAME		=		set_the_world_on_fire
+NAME		=		Abstact_class
 CC			=		c++ -std=c++98
 FLAGS		=		-Wall -Wextra -Werror
-FILES		=		A_Animal.cpp Brain.cpp Dog.cpp Cat.cpp main.cpp
+FILES		=		AAnimal.cpp Brain.cpp Dog.cpp Cat.cpp main.cpp
 
 OBJS		=		$(FILES:.cpp=.o)
 

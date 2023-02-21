@@ -20,7 +20,8 @@ Cat&	Cat::operator=(const Cat &c) {
 	if (this != &c) {
 		_type = c._type;
 		this->_b = new Brain();
-		this->_b = c._b;
+		for (int i = 0; i < 100; i++)
+			this->_b->_ideas[i] = c._b->_ideas[i];
 	}
 	return *this;
 }
