@@ -1,4 +1,4 @@
-NAME		=		maggots
+NAME		=		Abstract_Form
 CC			=		c++ -std=c++98
 FLAGS		=		-Wall -Wextra -Werror
 FILES		=		main.cpp  \

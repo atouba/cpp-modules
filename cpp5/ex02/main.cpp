@@ -10,25 +10,42 @@
 #include "Form.hpp"
 
 int main() {
-	Bureaucrat	x("Error", 10);
-//	AForm		y("Error", -999, 8);
-	AForm*		F = new ShrubberyCreationForm("Home");
-	Form		G("SomeForm", 33, 88);
+	Bureaucrat	x("John", 40);
 
-//	F->beSignedShrubbery(x);
-//	F->execute(x);
-	x.executeForm(G);
-//	delete(F);
-//
-//	std::cout << std::endl;
-//	Bureaucrat	y("Gottingham", 50);
-//	F = new RobotomyRequestForm("Home");
-//	F->beSignedRobotomy(y);
-//	F->execute(y);
-//	delete(F);
-//	std::cout << std::endl;
-//
-//	F = new PresidentialPardonForm("Home");
-//	F->execute(x);
+	std::cout << "Testing shrubbery creation" << std::endl;
+
+	AForm*		F = new ShrubberyCreationForm("Home");
+	F->execute(x);
+
+	F->beSignedShrubbery(x);
+	F->execute(x);
 	delete(F);
+
+//	std::cout << std::endl << "------------------------------" << std::endl;
+
+	std::cout << std::endl << "Testing robotomy request" << std::endl;
+
+	F = new RobotomyRequestForm("Sputnik");
+	F->execute(x);
+
+	F->beSignedRobotomy(x);
+	F->execute(x);
+	delete(F);
+
+//	std::cout << std::endl << "------------------------------" << std::endl;
+
+	std::cout << std::endl << "Testing presidential pardon" << std::endl;
+
+	F = new PresidentialPardonForm();
+	F->execute(x);
+
+
+	F->beSignedPresidential(x);
+	F->execute(x);
+	delete(F);
+
+	std::cout << std::endl << "------------------------------" << std::endl << std::endl;
+
+	Form	a("sophisticatedForm", 13, 37);
+	x.executeForm(a);
 }
