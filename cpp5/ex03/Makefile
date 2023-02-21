@@ -1,4 +1,4 @@
-NAME		=		maggots
+NAME		=		Intern
 CC			=		c++ -std=c++98
 FLAGS		=		-Wall -Wextra -Werror
 FILES		=		main.cpp  \

@@ -4,25 +4,29 @@
 | -----------------------------------------------------------------------------*/
 
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
 #include "Intern.hpp"
 
-void	foo() {
-	Intern someRandomIntern;
-	Form *rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
-//	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
-	std::cout << rrf->getName() << std::endl;   // ????
-	delete(rrf);
-//	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-//	delete(rrf);
-}
-
 int main() {
-	foo();
-	// when you push to the intra don't forget to delete sequence_alg.cpp
+	Intern someRandomIntern;
+	Form* rrf;
 
-//	system("leaks maggots");
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	delete(rrf);
+
+	std::cout << std::endl;
+
+	rrf = someRandomIntern.makeForm("shrubbery creation", "Dracaena trifasciata");
+	delete(rrf);
+
+	std::cout << std::endl;
+
+	rrf = someRandomIntern.makeForm("presidential pardon", "RUJA IGNATOVA");
+	delete(rrf);
+
+	std::cout << std::endl;
+
+	rrf = someRandomIntern.makeForm("unknown form", "anonymous");
+
+
 }
