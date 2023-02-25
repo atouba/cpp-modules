@@ -1,6 +1,6 @@
 NAME		=		Sirialization
 CC			=		c++ -std=c++98
-FLAGS		=		-Wall -Wextra -Werror
+CPPFLAGS		=		-Wall -Wextra -Werror
 FILES		=		Data.cpp Serializer.cpp main.cpp
 
 OBJS		=		$(FILES:.cpp=.o)
@@ -8,7 +8,7 @@ OBJS		=		$(FILES:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -rf *.o
