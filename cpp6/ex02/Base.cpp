@@ -36,10 +36,6 @@ void	identify(Base* p) {
 }
 
 void	identify(Base& p) {
-//	A*	a = dynamic_cast<A*>(&p);
-//	B*	b = dynamic_cast<B*>(&p);
-//	C*	c = dynamic_cast<C*>(&p);
-
 	try {
 		A&	a = dynamic_cast<A&>(p);
 		std::cout << "the type of this object pointed by p is A" << std::endl;
@@ -60,11 +56,4 @@ void	identify(Base& p) {
 		(void)a;
 	}
 	catch (std::bad_cast&) {}
-
-//	if (a)
-//		std::cout << "the type of this object pointed by p is A" << std::endl;
-//	if (b)
-//		std::cout << "the type of this object pointed by p is B" << std::endl;
-//	if (c)
-//		std::cout << "the type of this object pointed by p is C" << std::endl;
 }

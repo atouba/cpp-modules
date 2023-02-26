@@ -26,13 +26,12 @@
 #include "C.hpp"
 
 int main() {
-//	Base*	a = generate();
-
-//	Base*	b = new B;
-//
-//	identify(b);
+	Base*	a = generate();
+	Base*	b = new B;
 	C	c;
 	Base&	rc = c;
 
+	identify(a);
+	identify(b);
 	identify(rc);
 }
