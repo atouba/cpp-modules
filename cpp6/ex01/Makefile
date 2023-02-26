@@ -1,6 +1,6 @@
 NAME		=		Sirialization
 CC			=		c++ -std=c++98
-CPPFLAGS		=		-Wall -Wextra -Werror
+CPPFLAGS	=		-Wall -Wextra -Werror
 FILES		=		Data.cpp Serializer.cpp main.cpp
 
 OBJS		=		$(FILES:.cpp=.o)

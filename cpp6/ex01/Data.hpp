@@ -8,15 +8,19 @@
 
 #include <iostream>
 
-class Data {
-public:
-	int	_x;
-	Data(int x);
-	Data();
-	Data(const Data& d);
-	Data&	operator=(const Data& d);
-	~Data();
-};
+//class Data {
+//public:
+//	int	_x;
+//	Data(int x);
+//	Data();
+//	Data(const Data& d);
+//	Data&	operator=(const Data& d);
+//	~Data();
+//};
 
+typedef struct Data {
+	int			x;
+	std::string	s;
+} Data;
 
 #endif //CPP6_DATA_HPP

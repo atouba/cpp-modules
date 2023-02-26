@@ -10,6 +10,7 @@ Serializer::Serializer() {}
 Serializer::Serializer(const Serializer &d) {*this = d;}
 
 Serializer&	Serializer::operator=(const Serializer &d) {
+	(void)d;
 	return *this;
 }
 

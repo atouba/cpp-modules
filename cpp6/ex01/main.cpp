@@ -7,11 +7,23 @@
 
 
 int main() {
-	Data*	a = new Data(10);
+	Data*	a = new Data;
 	Serializer	s;
+
+	a->x = 10;
+	a->s = "Hello world!";
 
 	uintptr_t	x = s.serialize(a);
 	Data*	b = s.deserialize(x);
 
-	std::cout << a->_x << std::endl;
+
+	std::cout << a->x << std::endl;
+	std::cout << a->s << std::endl;
+	std::cout << b->x << std::endl;
+	std::cout << b->s << std::endl << std::endl;
+
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+
+	delete(a);
 }
