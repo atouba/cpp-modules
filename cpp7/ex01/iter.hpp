@@ -9,7 +9,7 @@
 #include <iostream>
 
 template<typename T>
-void	fun(T& x) {
+void	fun(T const& x) {
 	std::cout << x << " ";
 }
 
