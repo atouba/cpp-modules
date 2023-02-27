@@ -21,19 +21,19 @@ Array<T>::Array(unsigned int n) {
 
 template<typename T>
 Array<T>::Array(const Array& t) {
+	s = 0;
 	*this = t;
 }
 
 template<typename T>
 T&	Array<T>::operator=(const Array& t) {
 	if (this != &t) {
-		if (arr)
-			delete(arr);
 		arr = new T[t.size()];
-		for (int i = 0; i < t.size(); i++)
+		s = t.size();
+		for (unsigned int i = 0; i < t.size(); i++)
 			arr[i] = t.arr[i];
 	}
-	return *this;
+	return reinterpret_cast<T&>(*this);
 }
 
 template<typename T>
@@ -47,7 +47,7 @@ unsigned int	Array<T>::size() const {
 }
 
 template<typename T>
-T&	Array<T>::operator[](const unsigned int idx) {
+ T&	Array<T>::operator[](const unsigned int idx) const {
 	try {
 		if (idx < 0 || idx >= s)
 			throw (std::exception());

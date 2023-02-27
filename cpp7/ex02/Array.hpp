@@ -18,7 +18,7 @@ public:
 	Array(unsigned int n);
 
 	unsigned int	size() const;
-	T&				operator[](const unsigned int idx);
+	 T&				operator[](const unsigned int idx) const;
 
 	T*				arr;
 	unsigned int	s;

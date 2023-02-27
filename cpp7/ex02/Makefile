@@ -1,6 +1,6 @@
 NAME		=		Array
 CC			=		c++ -std=c++98
-CPPFLAGS	=		-Wall -Wextra -Werror
+CPPFLAGS	=		-Wall -Wextra -Werror -g
 FILES		=		main.cpp
 
 OBJS		=		$(FILES:.cpp=.o)
