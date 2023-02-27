@@ -26,14 +26,14 @@ Array<T>::Array(const Array& t) {
 }
 
 template<typename T>
-T&	Array<T>::operator=(const Array& t) {
+Array<T>&	Array<T>::operator=(const Array& t) {
 	if (this != &t) {
 		arr = new T[t.size()];
 		s = t.size();
 		for (unsigned int i = 0; i < t.size(); i++)
 			arr[i] = t.arr[i];
 	}
-	return reinterpret_cast<T&>(*this);
+	return *this;
 }
 
 template<typename T>
@@ -47,7 +47,21 @@ unsigned int	Array<T>::size() const {
 }
 
 template<typename T>
- T&	Array<T>::operator[](const unsigned int idx) const {
+ T&	Array<T>::operator[](const unsigned int idx) {
+	try {
+		if (idx < 0 || idx >= s)
+			throw (std::exception());
+		return arr[idx];
+	}
+	catch (std::exception& e) {
+		std::cout << "index out of range" << std::endl;
+		exit(1);
+	}
+	return arr[idx];
+}
+
+template<typename T>
+const T&	Array<T>::operator[](const unsigned int idx) const {
 	try {
 		if (idx < 0 || idx >= s)
 			throw (std::exception());

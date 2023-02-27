@@ -16,9 +16,6 @@ int main() {
 	std::cout << x[99] << std::endl;
 }
 
-//#include <iostream>
-//#include "Array.tpp"
-//
 //#define MAX_VAL 750
 //int main(int, char**)
 //{

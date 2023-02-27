@@ -13,12 +13,13 @@ class Array {
 public:
 	Array();
 	Array(const Array& a);
-	T&	operator=(const Array& a);
+	Array&	operator=(const Array& a);
 	~Array();
 	Array(unsigned int n);
 
 	unsigned int	size() const;
-	 T&				operator[](const unsigned int idx) const;
+	T&				operator[](const unsigned int idx);
+	const T&		operator[](const unsigned int idx) const;
 
 	T*				arr;
 	unsigned int	s;
