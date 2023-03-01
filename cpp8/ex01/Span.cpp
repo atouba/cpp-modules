@@ -7,7 +7,7 @@
 
 #include "Span.hpp"
 
-Span::Span(): _n(0) {}
+Span::Span(): _n(0), _s(0) {}
 
 Span::Span(const Span &s) {
 	*this = s;
@@ -16,6 +16,7 @@ Span::Span(const Span &s) {
 Span&	Span::operator=(const Span &s) {
 	if (this != &s) {
 		_n = s._n;
+		_s = s._s;
 		for (unsigned int i = 0; i < s._nums.size(); i++)
 			_nums.push_back(s._nums[i]);
 	}
@@ -24,7 +25,7 @@ Span&	Span::operator=(const Span &s) {
 
 Span::~Span() {}
 
-Span::Span(unsigned int n): _n(n) {}
+Span::Span(unsigned int n): _n(n), _s(0) {}
 
 void	Span::addNumber(int number) {
 	try {
@@ -36,18 +37,19 @@ void	Span::addNumber(int number) {
 		return ;
 	}
 	_nums.push_back(number);
+	_s++;
 }
 
 unsigned int	Span::shortestSpan() {
 	unsigned int	shortestspan;
 
 	try {
-		if (_n <= 1)
+		if (_s <= 1)
 			throw (std::exception());
 	}
 	catch (std::exception&) {
 		std::cout << "Error: Couldn't conduct a shortest span" << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	std::sort(_nums.begin(), _nums.end());
 	shortestspan = _nums[1] - _nums[0];
@@ -60,7 +62,7 @@ unsigned int	Span::shortestSpan() {
 
 unsigned int	Span::longestSpan() {
 	try {
-		if (_n <= 1)
+		if (_s <= 1)
 			throw (std::exception());
 	}
 	catch (std::exception&) {

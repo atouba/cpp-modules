@@ -15,6 +15,7 @@
 class Span {
 private:
 	unsigned int		_n;
+	unsigned int		_s;
 public:
 	std::vector<int>	_nums;
 
@@ -34,8 +35,16 @@ public:
 
 template<typename Iterator>
 void			Span::addNumbers(Iterator begin, Iterator end) {
-	for (Iterator i = begin; i != end; i++)
-		addNumber(*i);
+	try {
+		if (end - begin > _n - _s)
+			throw(std::exception());
+	}
+	catch(std::exception& e) {
+		std::cout << "Error: Couldn't add " << end - begin << " numbers, since there isn't much space in your Spane" << std::endl;
+		return ;
+	}
+	_nums.insert(_nums.end(), begin, end);
+	_s += end - begin;
 }
 
 #endif //CPP8_SPAN_HPP

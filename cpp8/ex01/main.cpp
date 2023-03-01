@@ -35,4 +35,4 @@ int main() {
 //
 //	std::cout << a.shortestSpan() << std::endl;
 //	std::cout << a.longestSpan() << std::endl;
-//}
+}
