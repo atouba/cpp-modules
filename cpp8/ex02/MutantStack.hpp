@@ -11,7 +11,6 @@
 #include <stack>
 #include <vector>
 #include <deque>
-#include <typeinfo>
 #include <iostream>
 
 template<class T>
